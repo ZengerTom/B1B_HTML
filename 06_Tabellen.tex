@@ -1,0 +1,43 @@
+ \chapter{Tabellen}
+Eine Tabelle in HTML dient nicht der Formatierung sondern nur der logischen Anordnung der Daten. Die Formatierung erfolgt wie üblich über CSS.
+\section{einfache Tabellenstruktur}
+Eine einfache Tabellenstruktur besteht aus folgenden Elementen:
+\begin{itemize}
+\item Tabelle \texttt{<table>}
+\item Reihe \texttt{<tr>}
+\item Kopfzeile \texttt{<th>}
+\item Zelle \texttt{<td>}
+\end{itemize}
+\begin{lstlisting}[caption=''einfache Tabelle'']
+<table>
+   <tr>   <th>H1</th>    <th>H2</th>    <th>H3</th>    </tr>
+   <tr>   <td>C11</td>   <td>C12</td>   <td>C13</td>   </tr>
+   <tr>   <td>C21</td>   <td>C22</td>   <td>C23</td>   </tr>
+</table>
+\end{lstlisting}
+\section{Attribute}
+In HTML5 wurden fast alle Tabellenattribute entfernt. Lediglich folgende Eigenschaften stehen zur Verfügung:
+\begin{tabbing}
+xxxxxxxxxxxxxxxxxxx\=\kill
+<table>		\>border=''1'' (Rahmen wird angezeigt)\\
+<td> \& <th>	\>colspan\\
+			\>rowspan\\
+			\>scope=''col'' (Überschrift für Spalte)\\
+			\>scope=''row'' (Überschrift für Zeile)\\
+\end{tabbing}
+\subsection{Attribute <colspan> \& <rowspan>}
+Mit Hilfe der Attribute \texttt{<colspan>} und \texttt{<rowspan>} können Spalten bzw. Zeilen zusammengefasst werden. Der übergebene Zahlenwert des Attributs beschreibt die Anzahl der Zellen.
+\section{Struktur}
+Zur Strukturierung der Tabelle stehen folgende drei Elemente zur Verfügung:
+\begin{itemize}
+\item Kopfbereich \texttt{<thead>}
+\item Datenbereich \texttt{<tbody>}
+\item Fußbereich \texttt{<tfoot>}
+\end{itemize}
+\section{Gruppierung}
+Mit den Elementen \texttt{<colgroup>} \& \texttt{<col>} können einzelne Bereiche einer Tabelle ausgezeichnet werden. Die Auszeichnung muss direkt hinter dem öffnenden \texttt{<table>} Element erfolgen. Spaltenübergriffe können mit dem Attribut \texttt{span} erreicht werden.
+\section{Beschriftung}
+\subsection{Element <caption>}
+Nach dem öffnenden \texttt{<table>} Tag erfolgt die Beschriftung der Tabelle mittels des \texttt{<caption>} Elements. Es kann nur eine Beschriftung pro Tabelle verwendet werden.
+\subsection{Element <figcaption>}
+Die Verwendung erfolgt äquivalent zu allen anderen Elementen, welche in ein \texttt{<figure>} Elternelement verpackt werden können.

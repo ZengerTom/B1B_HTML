@@ -1,0 +1,48 @@
+\chapter{Körperelement <body> - Strukturierung} 
+\section{Seitenstrukturierung}
+HTML5 stellt Elemente zur Verfügung, mit deren Hilfe eine sinnvolle Unterteilung einer Website möglich ist. Dies verringert den Einsatz von nicht semantischen \texttt{<div>} Elementen und \texttt{class} Attributen.
+\subsection{Element <body>}
+Das \texttt{<body>} Element kennzeichnet den Dokumentenkörper. Alle Elemente zwischen den \texttt{body} Tags werden dargestellt. Das Element unterstützt keine Attribute.
+\subsection{Element <section>}
+Mit dem \texttt{<section>} Element kann die Website in themenbezogene Abschnitte eingeteilt werden. Eine Gliederung kann z.B. nach Inhalt oder Sinn erfolgen.
+\subsection{Element <article>}
+Das Element \texttt{<article>} verhält sich ähnlich wie das \texttt{<section>} Element. Allerdings sollte dieses Element für kleinere zusammengehörige Bereiche verwendet werden (z.B. einzelne Newsmeldungen/Blogeinträge). Charakteristsich für das Element ist die Mehrfache Verwendung für gleichartige Bereiche.
+\subsection{Element <aside>}
+Das Element \texttt{<aside>} bietet die Möglichkeit zusätzliche Informationen bereitzustellen. Semantisch kann es z.B. für eine Seitenleiste oder zusätzliche Informationen verwendet werden.
+\subsection{Element <nav>}
+Das Element \texttt{<nav>} dient zur Einteilung der Navigationselemente. Es wird empfohlen das Element in Kombination mit einer ungeordneten Liste für die Hauptnavigation zu verwenden. Es wird abgeraten innerhalb des \texttt{nav} Elements auf externe Seiten zu verlinken.
+\subsection{Element <h1> bis <h6>}
+Das Element stellt Überschriften unterschiedlicher Ordnung zur Verfügung. Diese Elemente dienen der inhaltlichen Struktur und nicht dem hervorheben von Text.
+\subsection{Element <header>}
+Mit dem Element \texttt{<header>} ist es möglich einen Kopfbereich zu erstellen. Dieser beeinflusst nicht die hierarchische Struktur der Website. Das Element darf nicht innerhalb von \texttt{<footer>, <address>} oder eines anderen \texttt{<header>} verwendet werden.
+\subsection{Element <footer>}
+Mit dem Element \texttt{<footer>} ist es möglich einen Fußbereich zu erstellen. Dieser beeinflusst nicht die hierarchische Struktur der Website. Das Element darf nicht innerhalb eines anderen \texttt{<footer>} Elements verwendet werden.
+\subsection{Element <address>}
+Das Element \texttt{<address>} ist für die Kontaktdaten des Autors gedacht. Es ist nicht für postalische Adressen zu verwenden.
+\section{Textstrukturierung}
+\subsection{Element <p>}
+Das \texttt{<p>} Element umschließt einen Textabsatz mit Fließtext. Es können innerhalb dieses Elements keine Überschriften und Sektionselemente verwendet werden.
+\subsection{Element <br>}
+Das \texttt{<br>} Element erzwingt einen Zeilenumbruch. Das Element ist ein alleinstehender Tag.
+\subsection{Element <wbr>}
+Das \texttt{<wbr>} Element ermöglicht  einen optionalen Zeilenumbruch an dieser Stelle. Das Element ist ein alleinstehender Tag.
+\subsection{Leerzeichen \&nbsp;}
+Mehrere Leerzeichen werden mit \texttt{\&nbsp} erreicht. Außerdem wird ein Zeilenumbruch an dieser Stelle verhindert.
+\subsection{Element <hr>}
+Mit dem Element \texttt{<hr>} wird eine inhaltliche Trennung erzeugt. Es darf nicht innerhalb von Paragraphen oder Überschriften verwendet werden.
+\subsection{Element <blockquote>}
+Mit dem Element \texttt{<blockquote>} werden Zitate gekennzeichnet. Mit dem Attribut \texttt{cite} kann die Quelle des Zitats angegeben werden. Leider können aktuelle Browser diese Quelle noch nicht darstellen.
+\subsection{Element <div>}
+Mit dem \texttt{<div>} Element wird ein allgemeiner Bereich definiert. Dies bewirkt, dass eine neue Zeile begonnen wird. Mit Klassen und IDs kann der Bereich mit CSS verändert (gestylt) werden. HTML5 erlaubt keine Attribute für \texttt{<div>}.
+\subsection{Element <main>}
+Das Element \texttt{<main>}  ist für den Hauptinhalt der Seite gedacht und darf im gesamten Dokument nur einmal vorkommen. Es ist ein reines Gruppierungselement und hat somit keinen Einfluss auf die Struktur. Für ältere Browser muss ein Workaround geschrieben werden.
+\subsection{Element <figure> \& <figcaption>}
+Das Element \texttt{<figure>} dient als Elternelement für Inhalte wie Grafiken, Bilder, Videos, etc. und ermöglicht damit ein Absetzten dieses Elements gegenüber eines Fließtextes. Das optionale Element \texttt{<figcaption>} ermöglicht eine Beschriftung des Inhalts.
+\subsection{Element <ul>}
+Mit dem Element \texttt{<ul>} werden ungeordnete Listen realisiert. Diesen Listen können weitere Elemente mit Hilfe von \texttt{<li>} zugeordnet werden. Desweiteren können diese Listen verschachtelt werden.
+\subsection{Element <ol>}
+Mit dem Element \texttt{<ol>} werden geordnete Listen realisiert. Diesen Listen können weitere Elemente mit Hilfe von \texttt{<li>} zugeordnet werden. Desweiteren können diese Listen verschachtelt werden. Die Nummerierung der Liste kann mit dem Attribut \texttt{reversed=''reversed''} umgekehrt werden. Mit dem Attribut \texttt{value=''wert''} kann die Nummerierung eines Listenelements oder der kompletten Liste geändert werden.
+\subsection{Element <dl>}
+Mit dem Element \texttt{<dl>} werden Beschreibungslisten realisiert. Das Element \texttt{<dt>} fügt einen Ausdruck hinzu, während \texttt{<dd>} die zugehörige Beschreibung einfügt.
+\subsection{Semantisches HTML}
+Sematisch korrektes HTML ist Grundlage für eine ordentliche Struktur einer Website. Statt auf \texttt{<div>} Elemente sollte, wo es möglich ist, auf strukturierende HTML Elemente gesetzt werden.

@@ -1,0 +1,36 @@
+\chapter{Körperelement <body> - Auszeichung}
+HTML Elemente zur Auszeichnung können innerhalb eines Textes auf Buchstaben, Wörter und Sätze angewandt werden. Diese Elemente erzeugen keinen Zeilenumbruch oder Absatz, sondern verhalten sich nur gemäß ihrer definierten Semantik. Trotz der leichten optischen Veränderungen durch diese Elemente erfolgt eine Formatierung nur durch CSS.
+\section{Element <abbr>}
+Mit dem \texttt{<abbr>} Element werden Abkürzungen gekennzeichnet. Das Attribut \texttt{title} kann angegeben werden. Der Browser stellt dann bei einem Mouse Over den übergebenen Titel dar.
+\section{Element <cite>}
+Mit dem \texttt{<cite>} Element werden Titel von Werken hervorgehoben. Das Attribut \texttt{title} kann angegeben werden. Der Browser stellt dann bei einem Mouse Over die Informationen dar.
+\section{Element <code> \& <pre>}
+Mit dem Element \texttt{<code>} wird Computercode innerhalb eines Textes gekennzeichnet. Bei mehreren Zeilen Code sollte das \texttt{<code>} Element von einem \texttt{<pre>} Element umschlossen werden. Bei einem präformatierten Text werden keine Whitespace Zeichen zusammengefasst.
+\section{Element <kdb> \& <samp>}
+Mit den Elementen \texttt{<kdb>} und \texttt{<samp>} werden Tastatureingaben bzw. Programmausgaben in einem Fließtext ausgezeichnet.
+\section{Element <dfn>}
+Mit dem Element \texttt{<dfn>} kann ein Ausdruck notiert werden, der nachfolgend definiert wird. Es ist nicht dafür gedacht komplette Definitionen zu markieren. Es wird empfohlen das Attribut \texttt{title} mit dem selben Inhalt zu verwenden.
+\section{Element <var>}
+Mit dem Element \texttt{<var>} wird eine Variable ausgezeichnet.
+\section{Elemente <bdo> \& <bdi>}
+Mit den Elementen \texttt{<bdo>} und \texttt{<bdi>} sind zum Ändern der Textrichtung gedacht. \texttt{<bdi>} verlässt sich dazu auf Unicode fähige Browser, welche die Richtung selbstständig anpassen, wohingegen die Textrichtung beim Element \texttt{<bdo>} mit dem Attribut \texttt{dir} explizit angegeben werden muss.
+\section{Elemente <em> \& <i> bzw. <strong> \& <b>}
+Diese Elemente können zum Betonen und Hervorheben eines Textes genutzt werden. Das Element \texttt{<em>} sollte für Passagen, die beim Sprechen besonders betont werden, verwendet werden. \texttt{<stron>} hingegen dient zum Auszeichnen mit einer besonderen Wirkung. Mit dem Element \texttt{<i>} werden spezielle Fachausdrücke gekennzeichnet. Schlüsselwörter und Namen sollten mit dem \texttt{<b>} Element notiert werden.
+\section{Element <mark>}
+Das Element \texttt{<mark>} dient zum markieren von Text (vgl. Textmarker).
+\section{Element <q>}
+Das Element \texttt{<q>} dient dazu innerhalb eines Textes ein Zitat zu kennzeichnen.
+\section{Elemente <u> \& <s>}
+Die Elemente \texttt{<u>} und \texttt{<s>} dienen zum Unterstreichen bzw. Durchstreichen von Text. Das Element \texttt{<s>} sollte für veralteten oder nicht mehr korrekten Inhalt verwendet werden. \texttt{<u>} dient in HTML5 zur Unterstreichung von Eigennamen (chin. Schrift) oder zum markieren von fehlerhaften Wörtern und Passagen.
+\section{Elemente <del> \& <ins>}
+Die Elemente \texttt{<del>} und \texttt{<ins>} dienen zum Markieren von bearbeiteten Text. Das \texttt{<del>} Element wird für gelöschten Text verwendet, während mit dem Element \texttt{<ins>} neu eingefügte Inhalte notiert werden.
+\section{Elemente <sub> \& <sup>}
+Die Elemente \texttt{<sub>} und \texttt{<sup>} dienen zum Hoch- bzw. Tiefstellen von Text.
+\section{Element <time>}
+Mit dem \texttt{<time>} Element werden Zeitangaben notiert. Die maschinenlesbare Form dieser Zeitangabe sollte mit dem Attribut \texttt{datetime} angegeben werden.
+\section{Element <small>}
+Das Element \texttt{<small>} dient zur Kennzeichnung von Informationen die im Kleingedruckten stehen.
+\section{Elemente <ruby>, <rp> \& <rt>}
+Ruby Annotation mit Klammern \texttt{<rp>} und Text \texttt{<rt>}
+\section{Element <span>}
+Das Element \texttt{<span>} dient zum Auszeichnen von einzelnen Textpassagen. Das Element sollte nur verwendet werden, falls kein anderes Element semantisch besser passt.

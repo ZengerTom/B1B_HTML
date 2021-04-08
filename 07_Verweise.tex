@@ -1,0 +1,66 @@
+ \chapter{Verweise}
+ Hyperlinks dienen zur Strukturierung des Projektes und um auf andere Seiten (auch externe Seiten oder Dokumente sind erlaubt) zu verlinken. Außer interaktive Elemente, Links, Formularelemente, audio, video dürfen fast alle Elemente anstatt eines Textes als Link verwendet werden.\\[-1.5em]
+ \begin{verbatim}
+<a href =''www.thomas-zenger.de''> Startseite </a>
+\end{verbatim}
+\section{interne Links}
+Bei internen Links, d.h. links auf dem eigenen Webspace, reicht in der Regel eine relative Pfadangabe zur Verlinkung aus.
+\begin{lstlisting}[caption=''Navigation'']
+<nav>
+   <a href=''pages/about.html''> Uber mich </a>
+   <a href=''pages/links.html''> Links </a>
+   <a href=''pages/impressum.html''> Impressum </a>
+</nav>
+\end{lstlisting}
+\section{externe Links}
+Die Notierung eines externen Links erfolgt wie die eines Internen. Einziger Unterschied ist, dass eine absolute URL erforderlich ist. Mit Hilfe des \texttt{target} Attributs kann das Ziel des Links im Browser festgelegt werden.\\[-1.5em]
+ \begin{verbatim}
+<a target=''_blank'' href =``https://www.heise.de''> Startseite </a>
+\end{verbatim}
+\begin{tabbing}
+xxxxxxxxxxxxxxxxxxx\=\kill
+\textbf{Attributwerte:}\\
+\texttt{\_blank}		\>Neues Fenster oder Tab\\
+\texttt{\_self}		\>aktuelles Fenster\\
+\texttt{\_parent}		\>Eltern-Fenster\\
+\texttt{\_top}		\>oberste Fenster-Ebene\\
+\end{tabbing}
+\section{E-Mail-Links}
+Ein Link auf eine E-Mail-Adresse wird mit der Standardanwendung für eMails geöffnet.\\[-1.5em]
+ \begin{verbatim}
+<a href =''mailto:mail@thomas-zenger.de''>Kontakt aufnehmen</a>
+\end{verbatim}
+\section{Link zu anderen Dateitypen}
+Ob ein Link zu einem anderen Dateityp funktioniert und dieser Dateityp korrekt dargestellt wird, ist browserabhängig. Als Empfehlung gilt, dass weit verbreitete Dateitypen verwendet werden sollten.
+\section{Download Links}
+Mit HTML5 ist es möglich Links unabhängig vom Inhalt als Downloadverweise auszuzeichnen. Das Attribut \texttt{download} kann als alleinstehendes Attribut verwendet werden oder es kann ein Name angegeben werden, unter welchem die Datei gespeichert werden soll.\\[-1.5em]
+ \begin{verbatim}
+<a href =''/download/antrag.pdf'' download>Antrag herunterladen</a>
+\end{verbatim}
+\section{Links auf die gleiche Seite}
+Um auf bestimmte Bereiche einer Website zu Verweisen müssen Anker gesetzt werden. Diese können über einen Hyperlink angesprochen werden. Ebenso ist es möglich einen Anker einer anderen Website zu referenzieren.
+\begin{lstlisting}[caption=''Anker'']
+<h1 id="top">Uberschrift</h1>
+...
+<a href="#top">Nach oben</a>
+\end{lstlisting}
+\section{Attribute}
+\begin{tabular}{|c|l|}
+\hline
+\rowcolor{lstback}\textbf{Attribut}	&\textbf{Beschreibung}\\
+\hline
+download	&Ziel zum Download anbieten\\
+\hline
+href 		&URL\\
+\hline
+hreflang	&Sprache des verlinkten Dokuments\\
+\hline
+media	&Medientyp\\
+\hline
+rel		&Typ der Verlinkung\\
+\hline
+target	&Verweisziel wo öffnen\\
+\hline
+type		&MIME-Type\\
+\hline
+\end{tabular}

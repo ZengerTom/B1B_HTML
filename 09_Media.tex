@@ -1,0 +1,76 @@
+\chapter{Multimedia} 
+\section{Element \texttt{<video>}} 
+Mit dem \texttt{<video>} Element ist es möglich Videos ohne Plug-In im Browser abzuspielen. Unterstützt werden die Formate \textbf{MP4, WebM} und \textbf{OGG}. Allerdings werden nicht alle Formate von jedem Browser unterstützt (außer MP4). 
+\begin{lstlisting}[caption=''Video'']
+<video width="640" controls autoplay>
+  <source src="sample.webm" type="video/webm">
+  <source src="sample.mp4" type="video/mp4">
+  <source src="sample.ogv" type="video/ogg">
+  Not Supported
+</video>
+\end{lstlisting}
+\subsection{Attribute}
+\begin{tabular}{|c|l|}
+\hline
+\rowcolor{lstback}\textbf{Attribut}	&\textbf{Beschreibung}\\
+\hline
+auto-play		&Startet Video sobald geladen\\
+\hline
+controls		&Blendet Steuerelemente ein\\
+\hline
+height		&Höhe\\
+\hline
+loop			&Endlosschleife\\
+\hline
+muted		&ohne Ton\\
+\hline
+poster		&Vorschaubild\\
+\hline
+preload		&alles (auto)\\
+			&nur Metadaten (meta)\\
+			&Nichts (none)\\
+\hline
+src			&URL\\
+\hline
+type			&Videoformat\\
+\hline
+width			&Breite\\
+\hline
+\end{tabular}
+\subsection{Element \texttt{<track>}}
+Gibt eine Untertiteldatei an.\\[-1.5em]
+ \begin{verbatim}
+<track src="untertitel_en.vtt" kind="subtitles" srclang="uk" label="Englisch">
+\end{verbatim}
+\newpage
+\section{Element \texttt{<audio>}}
+Mit dem \texttt{<audio>} Element ist es möglich Audiodateien ohne Plug-In im Browser abzuspielen. Unterstützt werden die Formate \textbf{MP3, WAV} und \textbf{OGG}.
+\begin{lstlisting}[caption=''Audio'']
+<audio controls>
+  <source src="sound/tusch.ogg" type="audio/ogg">
+  <source src="sound/tusch.mp3" type="audio/mpeg">
+  Not Supported
+<audio>
+\end{lstlisting}
+\subsection{Attribute}
+\begin{tabular}{|c|l|}
+\hline
+\rowcolor{lstback}\textbf{Attribut}	&\textbf{Beschreibung}\\
+\hline
+auto-play		&Startet Audio sobald geladen\\
+\hline
+controls		&Blendet Steuerelemente ein\\
+\hline
+loop			&Endlosschleife\\
+\hline
+muted		&ohne Ton\\
+\hline
+preload		&alles (auto)\\
+			&nur Metadaten (meta)\\
+			&Nichts (none)\\
+\hline
+src			&URL\\
+\hline
+type			&Videoformat\\
+\hline
+\end{tabular}

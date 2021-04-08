@@ -1,0 +1,179 @@
+ \chapter{Grafiken}
+\section{Element <img>}
+Die Attribute \texttt{source} und \texttt{alt} müssen beim Standalone Tag \texttt{<img>} angegeben werden. \texttt{src} gibt die Quelle (Pfad) des Bildes an, während mit \texttt{alt} eine Beschreibung des Bildes angegeben wird. Falls das Bild nicht geladen werden konnte, wird stattdessen die Beschreibung angezeigt.\\[-1.5em]
+ \begin{verbatim}
+<img src=''/pic/sample.jpg'' alt=''Ein Beispielbild''>
+\end{verbatim}
+\subsection{Beschriftung}
+\subsubsection{Attribut \texttt{title}}
+Wird das \texttt{title} Attribtut gesetzt, zeigt der Browser bei einem Mouse Over den angegebenen Text.
+\subsubsection{Elemente \texttt{<figure>} \& \texttt{<figcaption>}}
+Mit den beiden Elementen Elemente \texttt{<figure>} \& \texttt{<figcaption>} kann eine Bildunterschrift gesetzt werden. Das Bild wird mit \texttt{<figure} eingeschlossen und \texttt{<figcaption>} direkt nach dem öffnenden Tag angegeben (Beschriftung erscheint über dem Bild) oder direkt vor dem schließenden Tag (Beschriftung erscheint unter dem Bild). Bilder können auch mit Hilfe von \texttt{<figcaption>} zusammengefasst werden. Allerdings ist pro \texttt{<figcaption>} Element nur eine Caption erlaubt.
+\subsection{Attribute}
+\begin{tabular}{|c|l|}
+\hline
+\rowcolor{lstback}\textbf{Attribut}	&\textbf{Beschreibung}\\
+\hline
+alt		&alternativer Text\\
+\hline
+height	&Höhe der Grafik\\
+\hline
+ismap	&boolscher Wert, serverseitige Image Map\\
+\hline
+src		&Verweis zur Quelldatei\\
+\hline
+usemap	&Name einer Image Map (clientseitig)\\
+\hline
+width		&Breite der Grafik\\
+\hline
+\end{tabular}\\[1em]
+\textbf{Anmerkung:}\\
+\texttt{heigt} und \texttt{width} sollten immer angegeben werden. Der Browser reserviert beim Laden des HTML Codes den Platz für die Grafiken, so dass es nachträglich nicht zu Verschiebungen kommt. Es ist auch möglich Grafiken mithilfe der Attribute zu skalieren. Dies sollte allerdings vermieden werden, da dies nur die Darstellung im Browser beeinflusst und keinen Einfluss auf die Orginaldatei hat.
+\section{Verweissensitive Grafiken (Image Maps)}
+Eine Image Map besteht aus drei Teilen:
+\begin{itemize}
+\item Einem Bild \texttt{<img>} mit dem Attribut \texttt{usemap=''\#mapname''}
+\item Image Map Element mit angegebenen Namen \texttt{<map name=''mapname''>} 
+\item Koordinaten der verweissensitiven Bereiche. Für jeden Bereich wird ein \texttt{area} Element notiert.
+\end{itemize}
+\begin{lstlisting}[caption=''Image Map Beispiel'']
+<img src=''/pic/direction.jpg" alt="ImageMap" width="100" height="50" usemap="#direc">
+
+<map name="direc">
+    <area shape="rect" coords="0,0,50,50"
+     href="left.html" alt="links" title="links">
+    <area shape="rect" coords="50,0,100,50"
+     href="right.html" alt="rechts" title="rechts">
+     </map>
+\end{lstlisting}
+\subsection{Attribute \texttt{<area>} Element}
+\subsubsection{Attribute \texttt{shape} \& \texttt{cord}}
+Mit dem Attribut \texttt{shape} wird die Form des Bereiches deklariert. Die Koordinaten der Bereiche werden im \texttt{cords} Attribut aufgeführt. Zur Auswahl stehen:
+\begin{itemize}
+\item \texttt{rect} (Rechteck)\\
+Es müssen die linke obere und rechte untere Ecke angegeben werden (x1, y1, x2, y2).
+\item \texttt{circle} (Kreis)\\
+Es müssen der Mittelpunkt und der Radius angegeben werden (x, y, r).
+\item \texttt{poly} (Polygon)\\
+Es können beliebig viele Punkte angegeben werden. Diese werden durch gerade Linien miteinander verbunden. Zum Schließen des Polygons müssen die Koordinaten des ersten Elements nochmals zum Schluss angegeben werden.
+\end{itemize}
+\subsubsection{Attribute \texttt{href} \& \texttt{alt}}
+Die Attribute \texttt{href} \& \texttt{alt} sollten immer paarweise auftreten. Mit diesen Attributen wird die Verlinkung realisiert.
+\subsubsection{weitere Attribute}
+\begin{tabular}{|c|l|}
+\hline
+\rowcolor{lstback}\textbf{Attribut}	&\textbf{Beschreibung}\\
+\hline
+download	&Ziel zum Download anbieten\\
+\hline
+hreflang	&Sprache des verlinkten Dokuments\\
+\hline
+media	&Medientyp\\
+\hline
+rel		&Typ der Verlinkung\\
+\hline
+target	&Verweisziel wo öffnen\\
+\hline
+type		&MIME-Type\\
+\hline
+\end{tabular}
+\section{Element \texttt{<picture>}}
+Das Element \texttt{<picture>} dient als Container Element für mehrere Bidler. Die einzelnen Quellangaben enthalten eine Abfrage, sodass das richtige Bild zugeordnet werden kann. Das Lesen der Quellangaben erfolgt von oben nach unten. Am Ende sollte für ältere Browser noch ein \texttt{<img>} Element notiert werden.
+\begin{lstlisting}[caption=''picture Beispiel'']
+<picture> 
+   <source media="(min-width: 1024px)" srcset="pic/1024.jpg">
+   <source media="(min-width: 640px)" srcset="pic/640.jpg">
+   <source media="(min-width: 480px)" srcset="pic/480.jpg">
+   <!-- Fallback alte Browser -->
+   <img src=''pic/480.jpg" alt="title">
+</picture>
+\end{lstlisting}
+\subsubsection{Attribute}
+\begin{tabular}{|c|l|}
+\hline
+\rowcolor{lstback}\textbf{Attribut}	&\textbf{Beschreibung}\\
+\hline
+srcset	&Quellangabe (kann auch mehrere Quellen enthalten)\\
+\hline
+media	&Media Query\\
+\hline
+type 		&MIME-Type\\
+\hline
+sizes		&Breite des Bildes\\
+\hline
+\end{tabular}
+\section{Mehrere Bildquellen ohne \texttt{<picture>} Element}
+\begin{lstlisting}[caption=''mehrere Quellen ohne picture Element'']
+<img 
+    sizes="100vw" 
+    srcset="pic/480.jpg 480w, pic/640.jpg 640w, pic/1024.jpg 1024w"
+    src="pic/480.jpg" alt="title">
+  </p>
+\end{lstlisting}
+\newpage
+\section{Favicon}
+\begin{lstlisting}[caption=''Favicon Beispiel'']
+<head>
+   <link rel="icon" sizes="16x16" href="pic/favicon.ico">
+   <link rel="apple-touch-icon" sizes="120x120" href="pic/touch.png" type="image/png">
+</head>
+\end{lstlisting}
+\section{Vektorgrafiken}
+\subsection{Einfügen mit \texttt{<img>}}
+ \begin{verbatim}
+<img src=''/pic/sample.svg'' width=''50'' height=''50'' alt=''Vektrografik''>
+\end{verbatim}
+\subsection{Direkt Einbinden mit \texttt{<svg>}}
+Mit Hilfe des \texttt{<svg>} Elements können SVG Grafiken direkt im Browser gezeichent werden. Dabei müssen die XML Regeln beachtet werden. Der Ursprung des Koordinatensystems liegt dabei in der oberen linken Ecke. Die Größe wird im öffnenden Tag angeben.
+\subsubsection{Grafische Elemente}
+\begin{tabular}{|c|p{10cm}|}
+\hline
+\rowcolor{lstback}\textbf{Attribut}	&\textbf{Beschreibung}\\
+\hline
+<path .../>		&Pfad\\
+\hline
+<circle .../>		&Kreis, beschrieben durch Mittelpunkt und Radius (cx, cy, r)\\
+\hline
+<ellipse .../>	&Ellipse, beschrieben durch Mittelpunkt, vertikalen und horizontalen Radius (cx, cy, rx, ry)\\
+\hline
+<rect .../>		&Rechteck, beschrieben durch linke obere Ecke, Länge und Breite (x, y, witdh, heigth)\\
+\hline
+<line .../>		&Linie, beschrieben durch zwei Punkte (x1, y1, x2, y2)\\
+\hline
+<polygon .../>	&Polygon, Eckpunkte werden dem \texttt{point} Attribut übergeben (\verb&points=''0,0 10,10 20,0''&)\\
+\hline
+<polyline .../>	&Wie Polygon, jedoch werden Start- und Endpunkt nicht miteinander verbunden.\\
+\hline
+<text .../>		&Text, beschrieben durch Position, Schriftfamilie, Schriftgröße (\verb&x="5" y="80" fill="red" font-size="60"&)\\
+\hline
+<g>...</g>		&Zusammenfassen von graphischen Elementen\\
+\hline
+\end{tabular}
+\subsubsection{Attribute}
+\begin{tabular}{|c|l|}
+\hline
+\rowcolor{lstback}\textbf{Attribut}	&\textbf{Beschreibung}\\
+\hline
+stroke-width	&Linienstärke Rahmen\\
+\hline
+stroke		&Rahmenfarbe\\
+\hline
+stroke-linecap	&Aussehen\\
+\hline
+stroke-dasharray	&Gestrichelte/Gepunktete Linie\\
+\hline
+opacity		&Transparenz\\
+\hline
+fill			&Füllfarbe\\
+\hline
+transform		&Transformation der Grafik\\
+\hline
+\end{tabular}\\[1em]
+\textbf{weitere Attribute und Inforamtionen auf:} \href{https://wiki.selfhtml.org/wiki/SVG}{https://wiki.selfhtml.org/wiki/SVG}
+\section{Element \texttt{<canvas>}}
+Das \texttt{<canvas>} Element stellt eine ``Leinwand'' zur Verfügung. Auf dieser kann mithilfe von JavaScript gezeichnet werden.\\[-1.5em]
+\begin{verbatim}
+<canvas id="canvas1" width="400" height="200">
+  canvas element not supported
+</canvas>
+\end{verbatim}

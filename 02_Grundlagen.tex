@@ -1,0 +1,55 @@
+\chapter{Einführung und Grundlagen} 
+\section{Grundgerüst}
+\begin{lstlisting}[caption=''HTML Grundgerüst'']
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Fenstertitel</title>
+  </head>
+  <body>
+    <h1>Hauptuberschrift</h1>
+    <p>Text</p>
+  </body>
+</html>
+\end{lstlisting}
+\section{Dokumententyp}
+Erste Angabe im Dokument. Definiert den Typ des Dokuments. Bei älteren Dokumententypen muss eine Dokumenttypdefinition (DTD) erfolgen.\\[-1.5em]
+\begin{tabbing}
+xxxxxxxxxx\=\kill
+HTML5	\>\verb=<!doctype html>=\\
+\end{tabbing}
+\section{Wurzelelement <html>}
+Nach der Definition des Doctypes folgt das Wurzelelement \texttt{<html>}. Dies umschließt alle anderen HTML Elemente. Dem Wurzelelement kann ein Sprachattribut mitgegeben werden (\verb@lang=“de“@).
+\section{Grammatik}
+Groß- und Kleinschreibung findet in HTML keine Beachtung. Allerdings ist auf einen einheitlichen Stil zu achten.
+\subsection*{HTML Elemente}
+Ein HTML Element besteht aus einem öffnenden und einem schließenden Tag. Zugehörige Inhalt wird von diesen Tags eingeschlossen.
+\subsection*{Standalone Elemente}
+Alleinstehende Tags haben keinen Inhalt und benötigen deswegen keinen schließenden Tag.
+\subsection*{Optionale Tags}
+Manche Elemente erlauben ein Weglassen des Ende Tags.
+\subsection*{Verschachtelung}
+HTML Elemente können ineinander verschachtelt werden. Auf ein korrektes schließen der Tags ist zu achten.
+\subsection*{Attribute}
+Den Elementen können verschiedene passende Attribute zugeordnet werden. Folgende Arten von Attributen können zugewiesen werden:
+\begin{itemize}
+\item Attribut mit fester Wertzuweisung
+\item Attribut mit freier Wertzuweisung
+\item Attribut mit freier Wertzuweisung ohne Konvention
+\item allein stehende Attribute
+\end{itemize}
+\section{Kommentar}
+\begin{lstlisting}[caption=''Kommentare in HTML'']
+< ! - - Kommentarzeile - - >
+
+< ! - - 
+	Kommentar
+	Kommentar
+- - >
+\end{lstlisting}
+\section{DOM - Document Object Model}
+Ein HTML-Dokument kann als Baumstruktur interpretiert werden. Jedes Objekt wird dabei als Knoten dargestellt und kann mit Hilfe von z.B. JavaScript manipuliert werden.
+
+
+

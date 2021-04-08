@@ -1,0 +1,96 @@
+\chapter{Kopfelement <head>} 
+Mit Ausnahme des \texttt{<title>} Elements enthält das Kopfelement nur Elemente, welche nicht direkt für die Darstellung im Browser verwendet werden. \texttt{<head>} enthält neben dem Titel zusätzlich noch  Metadaten, Pfade zu Stylesheets, Scripte, usw. .
+\section{Element <title>}
+Jedes HTML Dokument sollte einen Titel enthalten. Dieser wird vom Browser angezeigt und unter anderem auch von Suchmaschinen verwendet. Das Element ist einzigartig.
+\section{Element <base>}
+Mit dem \texttt{<base>} Element wird die Basis-URL für die relative oder absolute Referenzierung definiert. Das Element ist einzigartig. Folgende Attribute können vergeben werden:\\[1em]
+\begin{tabular}{p{3cm} l}
+\textbf{Attribut}	&\textbf{Beschreibung}\\
+href 			&Basis-URL\\
+target		&Ziel des Verweises\\
+			&\_self (aktuelles Fenster), \_blank (neues Fenster)\\
+			&\_parent (Elternfenster), \_top (Hierarchisch höchstes Fenster)
+\end{tabular}
+\section{Element <link>}
+Mit dem \texttt{<link>} Element können externe Resourcen (z.B. CSS-Dateien) eingebunden werden. Das Element darf mehrfach auftreten. Es existieren sehr viele verschiedene Werte für das \texttt{rel} Attribut. Diese sollten noch mit Vorsicht genutzt werden.\\[1em]
+\begin{tabular}{p{4cm} l}
+\textbf{Attribut}	&\textbf{Beschreibung}\\
+rel 			&Typ der Verlinkung\\
+			&stylesheet (externe CSS Datei), icon (Favicon)\\
+type			&MIME Typ\\
+href 		 	&URL Adresse\\
+size			&nur bei icon sinnvoll\\
+media		&Optimiert für bestimmten Mediatyp (Responsive)\\
+\end{tabular}
+\newpage
+\section{Element <style>}
+Mit dem \texttt{<style>} Element können Style-Informationen (CSS) direkt in das HTML Dokument geschrieben werden. Innerhalb des \texttt{<body>} Elements muss das Attribut \texttt{scoped} verwendet werden. Das Element darf mehrfach auftreten.\\[1em]
+\begin{tabular}{p{4cm} l}
+\textbf{Attribut}	&\textbf{Beschreibung}\\
+media		&Optimiert für bestimmten Mediatyp (Responsive)\\
+scoped		&Style gilt nur im Eltern-Elemnt und Kind- Elementen\\
+type			&MIME Type\\
+\end{tabular}
+\section{Element <script>}
+Mit dem \texttt{<script>} Element können Skripte (JavaScript) in das HTML Dokument eingebunden werden. Das Skript kann direkt zwischen die Tags geschrieben werden oder es wird eine externe Datei referenziert. Dabei der Referenzierung darf das Element keinen Inhalt vorweisen. Das Element darf mehrfach auftreten und ebenfalls im \texttt{<body>} vorkommen. Wegen einer möglichen Verlängerung der Ladezeiten einer Seite, ist es sinnvoll, den Code erst am Ende der Seite einzufügen. Sollte JavaScript deaktiviert sein können mit dem \texttt{<noscript>} alternative Ausgaben gemacht werden.\\[1em]
+\begin{tabular}{p{4cm} l}
+\textbf{Attribut}	&\textbf{Beschreibung}\\
+async			&asynchrone Ausführung (nur extern)\\
+charset		&Zeichencodierung (nur extern)\\
+defer			&Erst Website parsen, dann Skript ausführen (nur extern)\\
+src			&URL Adresse\\
+type			&MIME Typ\\
+\end{tabular}
+\section{Element <meta>}
+Mit dem \texttt{<meta>} Element können zusätzliche Metainformationen zur Website angegeben werden. Viele Angaben folgen keinem Standard. Unter https://wiki.whatwg.org/wiki/MetaExtensions können sinnvolle Erweiterungen nachgeschlagen werden.
+\subsection{name/content Metadaten}
+Die Name/Content Paarungen sollten nicht für persönliche Informationen verwendet werden, sondern nur Informationen zum HTML Dokument enthalten.\\[0.5em]
+\verb&<meta name=''name'' content=''content''>&\\[1em]
+\begin{tabular}{p{4cm} l}
+\textbf{Name}	&\textbf{Beschreibung}\\
+author		&Optimiert für bestimmten Mediatyp (Responsive)\\
+keywords		&Style gilt nur im Eltern-Elemnt und Kind- Elementen\\
+description		&Beschreibung der Website\\
+\end{tabular}
+\subsection{http-equiv/content Metadaten}
+Die \texttt{http-equiv} Angaben (Pragma-Direktive) waren für den Webserver zur Kommunikation gedacht, jedoch liegt es am Browser wie mit diesen Daten umgegangen wird, da Webserver eigentlich keine HTML-Dokumente parsen.\\[0.5em]
+\verb&<meta http-equiv=''refresh'' content=''5''>&\\[1em]
+\begin{tabular}{p{4cm} l}
+\textbf{Name}	&\textbf{Beschreibung}\\
+refresh		&Seite neu laden (Zeitangabe als Content)\\
+refresh		&Nach gewisser Zeit weiterleiten (Zeit; URL als Content)\\
+expires		&Seite von Orginaladresse laden (Zeit als Content)\\
+\end{tabular}
+\subsection{Zeichencodierung Metadaten}
+Die Zeichenkodierung sollte immer angegeben werden. Mit ihrer Hilfe wird sichergestellt, dass alle Zeichen korrekt dargestellt werden.\\[0.5em]
+\verb&<meta charset="UTF-8">&\\
+Veraltet:\\
+\verb&<meta http-equiv="content-type" content="text/html; charset=utf-8">&
+\subsection{Beispiel <head>}
+\begin{lstlisting}[caption=''<head> Beispiel'']
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name=''author'' content=''Thomas Zenger''>
+    <meta name=''keywords'' content=''Beispiel''>
+    <meta http-equiv=''refresh'' content=''10''>
+    <title>Fenstertitel</title>
+    <base href=''www.thomas-zenger.de'' target=''_blank''>
+    <link rel=''stylesheet'' type=''text/css'' href=''style.css''>
+    <style type=''text/css''>
+       p {
+        background-color: #000000;
+       }
+    </style>
+    <script type=''text/javascript''>
+       window.onload=alert("Ein JavaScript!")
+    </script>
+    <script type="text/javascript" src="script.js"></script>
+  </head>
+  <body>
+    <h1>Hauptuberschrift</h1>
+    <p>Text</p>
+  </body>
+</html>
+\end{lstlisting}

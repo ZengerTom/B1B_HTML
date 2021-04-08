@@ -1,0 +1,30 @@
+\chapter{Aktive Elemente} 
+\section{Element \texttt{<embed>}}
+Das stand alone Element \texttt{<embed} wird für Inhalte verwendet, für die ein Plug In benötigt wird.
+\begin{lstlisting}[caption=''Beispiel embed'']
+<embed width="200" height="50" 
+   type="application/x-shockwave-flash"
+   src="animation.swf" quality="high">
+\end{lstlisting}
+\section{Element \texttt{<object>}}
+Das \texttt{<object>} Element ermöglicht ebenfalls das Einbinden von aktiven Inhalten. Im Gegensatz zum \texttt{<embed>} Element hat es einen schließenden Tag. Dies ermöglicht die Angabe eines alternativen Inhalts, falls das Element nicht unterstützt wird. Parameter werden mithilfe des \texttt{<param>} Elements angegeben.
+\begin{lstlisting}[caption=''Beispiel object'']
+<object width="200" height="50" type="application/x-shockwave-flash">
+   <param name=''movie'' src="animation.swf">
+   <param name=''quality'' quality="high">
+   Not Supported
+</object>
+\end{lstlisting}
+\section{Element \texttt{<iframe>}}
+Das \texttt{<iframe>} Element ermöglicht ebenfalls das Einbinden von Inhalten. In der Praxis wird es überwiegend dazu genutzt exterene HTML Dokumente in das aktuelle Dokument einzubinden.
+\begin{lstlisting}[caption=''Beispiel iframe'']
+<iframe height="320" width="680"
+   src="schleichwerbung.html">
+   Not Supported
+   <a href="schleichwerbung.html">Schleichwerbung</a>
+</iframe>
+\end{lstlisting}
+\subsection{Attribut \texttt{sandbox}}
+Das Attribut \texttt{sandbox} verhindert das Ausführen von Skripten, Links, etc. welche aus dem Frame hinausgehen, auf Cookies zugreifen oder Formulare absenden.
+\subsection{Attribut \texttt{seamless}}
+Das Attribut \texttt{seamless} veranlasst, dass eine Ressource nicht eingebettet sondern inkludiert ist. Die Ressource verhält sich wie ein Block Element.
